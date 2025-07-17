@@ -1,0 +1,33 @@
+/* about header */
+.about_header {
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 100px 20px 60px;
+  text-align: center;
+  border-bottom: 1px solid #222;
+}
+
+.about_header_content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about_heading {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #a855f7;
+  font_weight: bold;
+}
+
+.about_subtext {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.highlight {
+  color: #ec4899;
+  font-weight: bold;
+}
+
+/* about header  ends here*/
