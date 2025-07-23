@@ -1,6 +1,5 @@
-import Image from "next/image";
 import React from "react";
-
+import styles from "../normalfetch/noramlfetch.module.css";
 const page = async () => {
   const data = await fetch("https://fakestoreapi.com/products/1");
   const product = await data.json();
@@ -8,18 +7,15 @@ const page = async () => {
   console.log(product);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div className="px-6 py-4">
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
-            {product.title}
-          </h2>
-          <p className="text-sm text-gray-500 mb-2 capitalize">
-            Category: {product.category}
-          </p>
-          <p className="text-gray-700 mb-4">{product.description}</p>
-          <div className="text-xl font-bold text-green-600">
-            ${product.price}
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={styles.content}>
+          <div className={styles.categoryTag}>{product.category}</div>
+          <h1 className={styles.title}>{product.title}</h1>
+          <p className={styles.description}>{product.description}</p>
+          <div className={styles.footer}>
+            <div className={styles.price}>${product.price}</div>
+            <button className={styles.button}>Buy Now</button>
           </div>
         </div>
       </div>
