@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React from "react";
-
+import styles from "../nextjsfetch/nextjsdatafetch.module.css";
 async function page(props) {
   const data = await props.searchParams;
   const prod = await fetch(`https://fakestoreapi.com/products/${data.num}`);
@@ -9,18 +10,15 @@ async function page(props) {
   console.log("Hello from next js fetch");
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div className="px-6 py-4">
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
-            {product.title}
-          </h2>
-          <p className="text-sm text-gray-500 mb-2 capitalize">
-            Category: {product.category}
-          </p>
-          <p className="text-gray-700 mb-4">{product.description}</p>
-          <div className="text-xl font-bold text-green-600">
-            ${product.price}
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={styles.body}>
+          <div className={styles.category}>{product.category}</div>
+          <h1 className={styles.title}>{product.title}</h1>
+          <p className={styles.description}>{product.description}</p>
+          <div className={styles.footer}>
+            <span className={styles.price}>${product.price}</span>
+            <button className={styles.buyButton}>Buy Now</button>
           </div>
         </div>
       </div>
